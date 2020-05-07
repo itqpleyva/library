@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Public Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>    
+</head>
+<body style="background-image: url('/img/6.jpg'); background-size: cover; background-repeat:no-repeat;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#5a1b09">
+  <a class="navbar-brand" href="/">PUBLIC LIBRARY</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/books">BOOKS LIST</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/insert">INSERT NEW BOOK</a>
+      </li>  
+    </ul>
+  </div>
+</nav>
+<div class="row container-fluid  mt-4">
+	<div class="col-12 col-md-8 mx-auto row">
+		<div class="card col-12 col-md-6" style="width: 20rem;">
+			  <img class="card-img-top" th:src="${book.cover}" alt="Book image" style="max-height: 600px;">
+		</div>
+		<div class="col-12 col-md-6">
+			  <ul class="list-group"  style="border-radius:5px; box-shadow:black 1px 1px">
+			    <li class="list-group-item">
+			    <b><h4 class="card-title text-uppercase" th:text=" ${book.name}"></h4></b>
+			    </li>
+			    <li class="list-group-item">
+			    <b><p class="my-auto" th:text="${book.category}" /></b>
+			    </li>
+			    <li class="list-group-item">
+			     <p class="my-auto" th:text=" ${book.description}" /></span>
+			    </li>
+			    <li class="list-group-item">
+			    <a th:href="${book.url}" class="my-auto ml-auto" th:text="download"/>
+			    </li>
+			  </ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Public Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body style="background-image: url('/img/1.jpg')">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#5a1b09">
+  <a class="navbar-brand" href="/">PUBLIC LIBRARY</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/books">BOOKS LIST</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/insert">INSERT NEW BOOK</a>
+     </li>
+    </ul>
+  </div>
+</nav>
+<div class="row container-fluid pt-4 p-md-4">
+    <div class="col-12 col-md-8 mx-auto">
+            <form id="websocketForm" class="d-flex justify-content-between mb-4">
+		        <select required class="form-control" id="categorySelect" >
+		        	<option value="Romance">Romance</option>
+		        	<option value="Fiction">Fiction</option>
+		        	<option value="Nature">Nature</option>
+		        	<option value="Economy">Economy</option>
+		        	<option value="Adventure">Adventure</option>
+		        </select>
+                    <button  id="connect1" class="ml-4 form-control btn-primary" type="submit">Subscribe to selected category</button>
+                    <button id="disconnect" class="ml-4 form-control btn btn-danger" type="submit" disabled="disabled">Unsubscribe</button>
+            </form>
+            <div id="subs" class="d-none">
+		         <div class='text-center text-white' style="background-color:#5a1b09">LIST OF SUBSCRIBERS BY CATEGORIES</div>
+		          <table class='table table-dark'>
+				    <thead>
+					    <tr>
+						    <th scope='col'>Romance</th>
+						    <th scope='col'>Fiction</th>
+						    <th scope='col'>Adventure</th>
+						    <th scope='col'>Economy</th>
+						    <th scope='col'>Nature</th>
+					    </tr>
+				    </thead>
+				    <tbody >
+							<tr id="statistics"></tr>
+				    </tbody>
+			    </table>
+ 		</div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped table-dark d-none">
+                <thead>
+                <tr>
+                    <th id="headerCategory" class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+ </div>
+</body>
+</html>

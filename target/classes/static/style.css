@@ -1,0 +1,17 @@
+
+nav li {
+	
+	border-right: 1px solid white;
+}
+
+nav li:hover{
+	
+	background-color: #deb661;
+	color:black !important;
+	border-radius: 5px;
+}
+nav a:hover{
+	text-decoration: none !important;
+	color:black !important;
+
+}
