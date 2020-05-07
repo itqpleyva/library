@@ -1,5 +1,5 @@
 # library
-Library to share books and get real time information about the new inserted books and users categories subscription, this app was developed with spring boot, websoockets and stomp
+Library to share books and get real time information about the new inserted books and users categories subscription, this app was developed with spring boot, websockets and stomp
 <h3>Virtual Book Story</h1>
 <p>The main idea is to provide options to share books belonging to different categories, also provides the option to subscribe to a category and receive real-time information about books belonging to the selected category, the user subscribed to a category can see statistics in time actual subscriptions of other users to all the book categories managed by the system</p>
 <img src="/opt/libraryFront1.png"/>
